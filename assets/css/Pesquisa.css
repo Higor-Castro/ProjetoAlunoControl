@@ -1,0 +1,185 @@
+/* Estilização global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1b29;
+    color: white;
+    margin-top: 100px
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Estilo do container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #2b2a38;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Rótulos */
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #3a3a4f;
+    transition: background-color 0.3s ease;
+}
+h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+label:hover {
+    background-color: #575777;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+.inputCPF {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #3a3a4f;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    border-color: #6c5ce7;
+    background-color: #2b2a38;
+    outline: none;
+}
+
+/* Estilo dos botões de rádio */
+input[type="radio"] {
+    display: none;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="radio"]:not(:checked) + label:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Botões principais */
+button, .butPesquisa {
+    padding: 12px 25px;
+    background-color: #6c5ce7;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover, .butPesquisa:hover {
+    background-color: #8a2be2;
+    transform: translateY(-3px);
+}
+
+button:active, .butPesquisa:active {
+    background-color: #5d3dc4; 
+}
+
+/* Estilização do header */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, #1c1b29, #1c1b29ea);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.navbar h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.navbar-buttons a {
+    color: white;
+    background-color: #6c5ce7;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navbar-buttons a:hover {
+    background-color: #8a2be2;
+    transform: translateY(-3px); /* Sutil efeito de elevação */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilização Escala de Satisfação */
+.indice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #2b2a38;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px
+}
+

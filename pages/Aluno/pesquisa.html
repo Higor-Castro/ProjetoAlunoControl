@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlunoControl</title>
+    <link rel="stylesheet" href="../../assets/css/Pesquisa.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Portal do Aluno AlunoControl</h1>
+        <div class="navbar-buttons">
+            <a href="../../../index.html">Portal AlunoControl</a>
+        </div>
+    </div>
+    <div class="indice">
+        <h3>Escala de Satisfação:</h3>
+        <ul>
+            <li>1: 😠 Muito Insatisfeito</li>
+            <li>2: 🙁 Pouco Insatisfeito</li>
+            <li>3: 😐 Neutro</li>
+            <li>4: 🙂 Pouco Satisfeito</li>
+            <li>5: 😍 Muito Satisfeito</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Pesquisa de Satisfação</h1>
+       
+        <form method="post">
+            <input class="inputCPF" type="text" name="cpf" placeholder="Digite seu CPF" required maxlength="11" pattern="\d{11}" 
+                           title="Digite exatamente 11 dígitos">
+            <label class="labelPergunta">1) Como você avaliaria a facilidade de navegação na plataforma?</label><br>
+            <input type="radio" id="navegacao-1" name="navegacao" value="1" required>
+            <label for="navegacao-1">1</label>
+            <input type="radio" id="navegacao-2" name="navegacao" value="2">
+            <label for="navegacao-2">2</label>
+            <input type="radio" id="navegacao-3" name="navegacao" value="3">
+            <label for="navegacao-3">3</label>
+            <input type="radio" id="navegacao-4" name="navegacao" value="4">
+            <label for="navegacao-4">4</label>
+            <input type="radio" id="navegacao-5" name="navegacao" value="5">
+            <label for="navegacao-5">5</label>
+
+            <label class="labelPergunta">2) Como você considera o conteúdo apresentado relevante para o seu aprendizado?</label><br>
+            <input type="radio" id="conteudo-1" name="conteudo" value="1" required>
+            <label for="conteudo-1">1</label> 
+            <input type="radio" id="conteudo-2" name="conteudo" value="2">
+            <label for="conteudo-2">2</label>
+            <input type="radio" id="conteudo-3" name="conteudo" value="3">
+            <label for="conteudo-3">3</label>
+            <input type="radio" id="conteudo-4" name="conteudo" value="4">
+            <label for="conteudo-4">4</label>
+            <input type="radio" id="conteudo-5" name="conteudo" value="5">
+            <label for="conteudo-5">5</label>
+
+            <label class="labelPergunta">3) Você sente que os materiais são bem organizados e fáceis de entender?</label><br>
+            <input type="radio" id="organizacao-1" name="organizacao" value="1" required>
+            <label for="organizacao-1">1</label> 
+            <input type="radio" id="organizacao-2" name="organizacao" value="2">
+            <label for="organizacao-2">2</label>
+            <input type="radio" id="organizacao-3" name="organizacao" value="3">
+            <label for="organizacao-3">3</label>
+            <input type="radio" id="organizacao-4" name="organizacao" value="4">
+            <label for="organizacao-4">4</label>
+            <input type="radio" id="organizacao-5" name="organizacao" value="5">
+            <label for="organizacao-5">5</label>
+
+            <label class="labelPergunta">4) A plataforma oferece um bom suporte ao aluno em caso de dúvidas?</label><br>
+            <input type="radio" id="suporte-1" name="suporte" value="1" required>
+            <label for="suporte-1">1</label>
+            <input type="radio" id="suporte-2" name="suporte" value="2">
+            <label for="suporte-2">2</label>
+            <input type="radio" id="suporte-3" name="suporte" value="3">
+            <label for="suporte-3">3</label>
+            <input type="radio" id="suporte-4" name="suporte" value="4">
+            <label for="suporte-4">4</label>
+            <input type="radio" id="suporte-5" name="suporte" value="5">
+            <label for="suporte-5">5</label>
+
+            <label class="labelPergunta">5) Você acha que a plataforma ajudou a melhorar o seu desempenho acadêmico?</label><br>
+            <input type="radio" id="desempenho-1" name="desempenho" value="1" required>
+            <label for="desempenho-1">1</label>
+            <input type="radio" id="desempenho-2" name="desempenho" value="2">
+            <label for="desempenho-2">2</label>
+            <input type="radio" id="desempenho-3" name="desempenho" value="3">
+            <label for="desempenho-3">3</label> 
+            <input type="radio" id="desempenho-4" name="desempenho" value="4">
+            <label for="desempenho-4">4</label> 
+            <input type="radio" id="desempenho-5" name="desempenho" value="5">
+            <label for="desempenho-5">5</label> 
+
+            <button type="submit" class="butPesquisa">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
