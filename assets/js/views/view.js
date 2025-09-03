@@ -1,3 +1,5 @@
+import Controller from"../controllers/controllAluno.js";
+
 const container = document.querySelector('.container');
 const main = document.querySelector('.main');
 container.addEventListener('click', mostrarBotao);
@@ -18,29 +20,29 @@ function mostrar(pagina) {
     // para o Aluno
     alterarCadastro: {
       titulo: "Alterar Cadastro",
-      acao: "alterarAluno",
+      acao: Controller.alterarAluno,
       botao: "Consultar"
     },
     consultarCadastro: {
       titulo: "Consultar Cadastro",
-      acao: "consultarAluno",
+      acao: Controller.consultarAluno,
       botao: "Buscar"
     },
     excluirCadastro: {
       titulo: "Excluir Cadastro",
-      acao: "excluirAluno",
+      acao: Controller.excluirAluno,
       botao: "Excluir"
     },
 
     //para a Pesquisa
     alterarPesquisa: {
       titulo: "Alterar Pesquisa",
-      acao: "alterarPesquisa",
+      acao: alterarPesquisa,
       botao: "Alterar"
     },
     consultarPesquisa: {
       titulo: "Consultar Pesquisa",
-      acao: "consultarPesquisa",
+      acao: consultarPesquisa,
       botao: "Buscar"
     },
     excluirPesquisa: {
@@ -58,7 +60,7 @@ function mostrar(pagina) {
   // gera HTML dinamicamente
   main.innerHTML = `
     <h1>${config.titulo}</h1>
-    <form onsubmit="${config.acao}">
+    <form id="formDinamico">
       <input 
         type="text" 
         name="cpf" 
@@ -71,4 +73,8 @@ function mostrar(pagina) {
       <button type="submit">${config.botao}</button>
     </form>
   `;
+
+  // adiciona o evento ao formulário
+  const formDinamico = document.getElementById("formDinamico");
+  formDinamico.addEventListener("submit", config.acao);
 }

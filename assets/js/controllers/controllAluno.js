@@ -1,11 +1,10 @@
 import {AlunoModel} from "../model/AlunoModel.js";
 
 const formAdiciona = document.getElementById("formAluno");
-const formAlterar = document.getElementById("formAlterarAluno");
 let msg = "";
 
 // Adicionar o Aluno em forma de OBJ na lista do AlunoModel
-function adicionaAluno (e){
+function adicionarAluno (e){
     e.preventDefault();
     //OBJ para adicionar ao AlunoModel.createAluno.
     let addAluno = {
@@ -55,6 +54,10 @@ function alterarAluno (e){
     }
 
 }
-// Eventos teste
+//Exporta a função alterarAluno para ser usada em outros módulos
+export default { alterarAluno };
 
-formAlterar.addEventListener("submit", alterarAluno);
+// Eventos teste
+if (formAdiciona) {
+  formAdiciona.addEventListener("submit", adicionarAluno);
+}
