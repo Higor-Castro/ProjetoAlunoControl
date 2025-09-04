@@ -1,7 +1,13 @@
 // Entidade que armazena o CRUD do Aluno em forma de métodos
 export const AlunoModel = {
     // Array onde serão armazenados todos os dados do aluno
-    arrAlunos: [],
+    arrAlunos: [{
+        cpf: 12345678901,
+        nome: 'higor',
+        email: 'server@gmail.com',
+        senha: 'higor0304343',
+        telefone: 11911111111
+    }],
 
     // Função que adiciona os dados do aluno na array 'alunos'
     createAluno: function (aluno) {
