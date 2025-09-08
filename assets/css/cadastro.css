@@ -56,7 +56,7 @@ body {
     transform: translateY(-3px); /* Sutil efeito de elevação */
 }
 
-.container {
+main{
     background-color: rgba(255, 255, 255, 0.15);
     width: 100%;
     max-width: 400px;

@@ -22,13 +22,13 @@ function adicionarAluno (e){
     for(let campo of valores){
         if(!addAluno[campo]){
             msg = `Esta faltando Preencher esta valor: ${campo}`;
-            view.visualizarMensagem(msg)
+            view.visualizarMensagem(msg);
         }
     }
 
     AlunoModel.createAluno(addAluno);
     msg = `${addAluno.nome} Adicionado com Sucesso!!` ;
-    view.visualizarMensagem(msg)
+    view.visualizarMensagem(msg);
 };
 
 // Função que altera os valores do Aluno, a partir do cpf do Aluno
@@ -43,10 +43,12 @@ function alterarAluno (e){
     }
     // Se o aluno existir, cria um novo objeto com os dados atualizados
     else{
+        // chama a função para visualizar o formulário de atualização
         const viewUpdateAluno = view.visualizarAtualizacaoAluno;
+        // mostra o formulário com os dados do aluno a ser atualizado
         viewUpdateAluno(AlunoModel.readAluno()[indexCpf]);
+        
         //faz a atualização quando o formulário for enviado
-
         const formAtualizarAluno = document.getElementById("formAtualizarAluno");
         formAtualizarAluno.addEventListener("submit", (e) => {
             e.preventDefault();
