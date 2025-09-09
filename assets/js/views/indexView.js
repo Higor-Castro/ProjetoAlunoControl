@@ -33,13 +33,13 @@ function mostrarBotao(botao) {
     },
     consultarCadastro: {
       titulo: "Consultar Cadastro",
-      acao: "Controller.consultarAluno",
+      acao: Controller.consultarAluno,
       botao: "Buscar",
       css: "cadastro"
     },
     excluirCadastro: {
       titulo: "Excluir Cadastro",
-      acao: "Controller.excluirAluno",
+      acao: Controller.deletarAluno,
       botao: "Excluir",
       css: "cadastro"
     },
@@ -65,26 +65,28 @@ function mostrarBotao(botao) {
     }
 
   };
+  
+
 
   // pega a config da página
   const config = verificadorBotao[botao];
-
-    // troca o CSS
-  trocarCss(config.css);
-  
+   // troca o CSS
+   trocarCss(config.css);
+   
   // gera HTML dinamicamente
   main.innerHTML = `
     <h1>${config.titulo}</h1>
     <form id="formDinamico">
-      <input 
-        type="text" 
-        name="cpf" 
-        placeholder="Digite CPF" 
-        required 
-        maxlength="11" 
-        pattern="\\d{11}" 
-        title="Digite exatamente 11 dígitos"
-      >
+  <input 
+      type="text" 
+      name="cpf" 
+      placeholder="Digite CPF" 
+      required 
+      maxlength="11" 
+      pattern="\\d{11}" 
+      title="Digite exatamente 11 números"
+      oninput="this.value = this.value.replace(/\\D/g,'')" 
+  />
       <button type="submit">${config.botao}</button>
     </form>
   `;

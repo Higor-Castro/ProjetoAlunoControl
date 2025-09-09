@@ -32,7 +32,17 @@ function visualizarAtualizacaoAluno(aluno) {
 
 }
 
-  // fução para visualizar as mensa
+function visualizarAluno(aluno) {
+  main.innerHTML = `
+    <h1>Dados do Aluno</h1>
+    <p><strong>Nome:</strong> ${aluno.nome}</p>
+    <p><strong>CPF:</strong> ${aluno.cpf}</p>
+    <p><strong>Email:</strong> ${aluno.email}</p>
+    <p><strong>Telefone:</strong> ${aluno.telefone}</p>
+  `;
+}
+
+  // fução para visualizar as mensagens 
 function visualizarMensagem(mensagem) {
   main.innerHTML = `
     <h1>Resultado</h1>
@@ -43,4 +53,4 @@ function visualizarMensagem(mensagem) {
 
 
 // Exporta as funções para serem usadas em outros módulos
-export default {visualizarMensagem, visualizarAtualizacaoAluno};
+export default {visualizarMensagem, visualizarAtualizacaoAluno, visualizarAluno};
