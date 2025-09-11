@@ -23,10 +23,11 @@
             <li>5: 😍 Muito Satisfeito</li>
         </ul>
     </div>
+<main class="main">
     <div class="container">
         <h1>Pesquisa de Satisfação</h1>
        
-        <form method="post">
+        <form method="post" id="formPesquisa">
             <input class="inputCPF" type="text" name="cpf" placeholder="Digite seu CPF" required maxlength="11" pattern="\d{11}" 
                            title="Digite exatamente 11 dígitos">
             <label class="labelPergunta">1) Como você avaliaria a facilidade de navegação na plataforma?</label><br>
@@ -92,5 +93,8 @@
             <button type="submit" class="butPesquisa">Enviar</button>
         </form>
     </div>
+</main>
+    </body>
+    <script type="module" src="../../assets/js/controllers/controllPesquisa.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 // Entidade que armazena o CRUD da Pesquisa em forma de métodos
-const PesquisaModel = {
+export  const PesquisaModel = {
     // Array onde serão amarzedos os dados da Pesquisa
     arrPesquisa: [],
 
@@ -7,7 +7,7 @@ const PesquisaModel = {
     // ela irar fazer o 'C' do CRUD
     createPesquisa: function(dadosPesquisa){
         // Array para validar todos os campos da array pesquisa
-        const valores = ["pergunta1","pergunta2","pergunta3","pergunta4","pergunta5"]
+        const valores = ["cpf","pergunta1","pergunta2","pergunta3","pergunta4","pergunta5"]
         for (let campo of valores){
             if (!dadosPesquisa[campo]){
                 throw new RangeError(`Esta faltando Preencher esta valor:`+ campo);
@@ -45,37 +45,3 @@ const PesquisaModel = {
 
 };
 
-try {
-    // Criar uma pesquisa (respostas 1 a 5)
-    PesquisaDAO.createPesquisa({
-        pergunta1: 1,
-        pergunta2: 5,
-        pergunta3: 4,
-        pergunta4: 2,
-        pergunta5: 1
-    });
-
-    console.log('create');
-    console.log(PesquisaDAO.readPesquisa());
-
-    // Atualizar a pesquisa de índice 0
-    PesquisaDAO.updatePesquisa(0, {
-        pergunta1: 3,
-        pergunta2: 2,
-        pergunta3: 5,
-        pergunta4: 4,
-        pergunta5: 1
-    });
-
-    console.log('update');
-    console.log(PesquisaDAO.readPesquisa());
-
-    // Deletar a pesquisa de índice 0
-    PesquisaDAO.deletePesquisa(0);
-
-    console.log('delete');
-    console.log(PesquisaDAO.readPesquisa());
-}
-catch (error) {
-    console.error(error.message);
-}

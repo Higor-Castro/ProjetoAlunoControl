@@ -18,7 +18,7 @@ function validarCpf(e) {
 
 }
 
-// Adicionar o Aluno em forma de OBJ na lista do AlunoModel
+// função para adicionar o Aluno em forma de OBJ na lista do AlunoModel
 function adicionarAluno (e){
     e.preventDefault();
     //OBJ para adicionar ao AlunoModel.createAluno.
@@ -101,7 +101,7 @@ function consultarAluno (e){
 
 
 //Exporta a função alterarAluno para ser usada em outros módulos
-export default { alterarAluno, deletarAluno, consultarAluno };
+export default { alterarAluno, deletarAluno, consultarAluno, validarCpf };
 
 // Adiciona o evento de submit ao formulário de adicionar aluno
 if (formAdiciona) {
