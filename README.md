@@ -34,13 +34,13 @@ Escolha o método que preferir!
 #### 💻 Usando **SSH**:
 
 ```bash
-git clone git@github.com:Higor-Castro/AlunoControl.git
+git clone git@github.com:Higor-Castro/ProjetoAlunoControl.git
 ```
 
 #### 💻 Usando **HTTPS**:
 
 ```bash
-git clone https://github.com/Higor-Castro/AlunoControl.git
+git clone https://github.com/Higor-Castro/ProjetoAlunoControl.git
 ```
 
 ### 2. Abra o projeto
