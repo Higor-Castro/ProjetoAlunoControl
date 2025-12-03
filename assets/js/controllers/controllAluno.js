@@ -1,5 +1,6 @@
 import {AlunoModel} from "../model/AlunoModel.js";
-import view from  "../views/viewAluno.js";
+import viewAluno from  "../views/viewAluno.js";
+import { visualizarMensagem } from "../views/ViewMensagem.js";
 
 
 const formAdiciona = document.getElementById("formAluno");
@@ -12,7 +13,7 @@ function validarCpf(e) {
     // Verifica se o aluno existe
     if(indexCpf === -1){
         msg = `Aluno não encontrado!`;
-        view.visualizarMensagem(msg);
+        visualizarMensagem(msg);
     }
     return indexCpf;
 
@@ -36,13 +37,13 @@ function adicionarAluno (e){
     for(let campo of valores){
         if(!addAluno[campo]){
             msg = `Esta faltando Preencher esta valor: ${campo}`;
-            view.visualizarMensagem(msg);
+            visualizarMensagem(msg);
         }
     }
 
     AlunoModel.createAluno(addAluno);
     msg = `${addAluno.nome} Adicionado com Sucesso!!` ;
-    view.visualizarMensagem(msg);
+    visualizarMensagem(msg);
 };
 
 // Função que altera os valores do Aluno, a partir do cpf do Aluno
@@ -52,7 +53,7 @@ function alterarAluno (e){
     let indexCpf = validarCpf(e);
 
     // chama a função para visualizar o formulário de atualização
-    const viewUpdateAluno = view.visualizarAtualizacaoAluno;
+    const viewUpdateAluno = viewAluno.visualizarAtualizacaoAluno;
     // mostra o formulário com os dados do aluno a ser atualizado
     viewUpdateAluno(AlunoModel.readAluno()[indexCpf]);
     
@@ -68,7 +69,7 @@ function alterarAluno (e){
         };
         AlunoModel.updateAluno(indexCpf, newAluno);
         msg = `Aluno ${newAluno.nome} alterado com sucesso!`;
-    view.visualizarMensagem(msg);
+        visualizarMensagem(msg);
     });
     }
 
@@ -79,7 +80,7 @@ function deletarAluno (e){
     let indexCpf = validarCpf(e);
 
     msg = `Aluno ${AlunoModel.readAluno()[indexCpf].nome} deletado com sucesso!`;
-    view.visualizarMensagem(msg);
+    visualizarMensagem(msg);
     AlunoModel.deleteAluno(indexCpf);
 
 }
@@ -94,7 +95,7 @@ function consultarAluno (e){
     const aluno = AlunoModel.readAluno()[indexCpf];
 
     // chama a função para visualizar os dados do aluno
-    view.visualizarAluno(aluno);
+    viewAluno.visualizarAluno(aluno);
 
 }
 

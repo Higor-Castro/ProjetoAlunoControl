@@ -42,15 +42,8 @@ function visualizarAluno(aluno) {
   `;
 }
 
-  // fução para visualizar as mensagens 
-function visualizarMensagem(mensagem) {
-  main.innerHTML = `
-    <h1>Resultado</h1>
-    <p>${mensagem}</p>
-  `;
-}
 
 
 
 // Exporta as funções para serem usadas em outros módulos
-export default {visualizarMensagem, visualizarAtualizacaoAluno, visualizarAluno};
+export default {visualizarAtualizacaoAluno, visualizarAluno};

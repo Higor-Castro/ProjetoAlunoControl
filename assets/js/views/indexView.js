@@ -55,6 +55,7 @@ function mostrarBotao(botao) {
       titulo: "Consultar Pesquisa",
       acao: "consultarPesquisa",
       botao: "Buscar",
+
       css: "pesquisa"
     },
     excluirPesquisa: {
@@ -95,3 +96,5 @@ function mostrarBotao(botao) {
   const formDinamico = document.getElementById("formDinamico");
   formDinamico.addEventListener("submit", config.acao);
 }
+
+
