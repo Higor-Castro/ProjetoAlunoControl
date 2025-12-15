@@ -59,7 +59,7 @@ function alterarAluno (e){
     
     //faz a atualização quando o formulário for enviado
     const formAtualizarAluno = document.getElementById("formAtualizarAluno");
-    formAtualizarAluno.addEventListener("submit", (e) => {
+    formAtualizarAluno.onsubmit = function (e) {
         e.preventDefault();
         let newAluno = {
             nome: e.target.nome.value,
@@ -70,7 +70,7 @@ function alterarAluno (e){
         AlunoModel.updateAluno(indexCpf, newAluno);
         msg = `Aluno ${newAluno.nome} alterado com sucesso!`;
         visualizarMensagem(msg);
-    });
+    };
     }
 
 // Função para deletar o Aluno a partir do cpf
