@@ -1,6 +1,7 @@
 import {PesquisaModel} from "../model/PesquisaModel.js";
 import { AlunoModel } from "../model/AlunoModel.js";
 import controllAluno from "./controllAluno.js";
+import { visualizarMensagem } from "../views/ViewMensagem.js";
 
 const formAdiciona = document.getElementById("formPesquisa");
 let msg = "";
@@ -13,7 +14,7 @@ const validarCpf = controllAluno.validarCpf;
 function adicionarPesquisa (e){
     e.preventDefault();
     // validar o cpf 
-    let indexCpf = validarCpf(e);
+    let indexCpf = validarCpf(Number(e.target.cpf.value));
     // OBJ para adicionar ao PesquisaModel.createPesquisa.
     let addPesquisa = {
         cpf: Number(e.target.cpf.value),
@@ -37,7 +38,7 @@ function adicionarPesquisa (e){
     // Se todos os campos estiverem preenchidos, adiciona a pesquisa
     PesquisaModel.createPesquisa(addPesquisa);
     msg = `Pesquisa do aluno ${AlunoModel.readAluno()[indexCpf].nome} adicionada com sucesso!`;
-    alert (msg);
+    visualizarMensagem (msg);
 }
 
 

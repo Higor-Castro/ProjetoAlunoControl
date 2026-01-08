@@ -1,26 +1,32 @@
-import GenereteArray from "./GenereteArray.js";
+import Strorage from "../services/GenereteArray.js";
 // Entidade que armazena o CRUD do Aluno em forma de métodos
 export const AlunoModel = {
     // Array onde serão armazenados todos os dados do aluno
-    arrAlunos: GenereteArray.getSaveData(),
+    arrAlunos: Strorage.get("ArrAlunos"),
 
     // Função que adiciona os dados do aluno na array 'alunos'
     createAluno: function (aluno) {
+        // Adiciona o aluno na array 
         this.arrAlunos.push(aluno);
-        GenereteArray.setNewData(this.arrAlunos);
+        // Salva os dados atualizados no armazenamento local
+        Strorage.set("ArrAlunos", this.arrAlunos);
 
     },
 
     //Função que atualiza as informação do aluno, aparti do indice 
     updateAluno:function(indice, newAluno){
-            this.arrAlunos[indice] = newAluno;
-           GenereteArray.setNewData(this.arrAlunos);
+        // Atualiza o aluno na array
+        this.arrAlunos[indice] = newAluno;
+        // Salva os dados atualizados no armazenamento local
+        Strorage.set("ArrAlunos", this.arrAlunos);
     },
 
     // Função que deleta o aluno da array alunos a partir do índice passado como parâmetro
     deleteAluno: function (indice) {
-            this.arrAlunos.splice(indice, 1);
-           GenereteArray.setNewData(this.arrAlunos);
+        // Remove o aluno da array
+        this.arrAlunos.splice(indice, 1);
+        // Salva os dados atualizados no armazenamento local
+        Strorage.set("ArrAlunos", this.arrAlunos);
     },
 
     // Função que retorna os alunos da array alunos

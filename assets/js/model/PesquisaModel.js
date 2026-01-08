@@ -1,19 +1,17 @@
+import Strorage from "../services/GenereteArray.js";
 // Entidade que armazena o CRUD da Pesquisa em forma de métodos
 export  const PesquisaModel = {
     // Array onde serão amarzedos os dados da Pesquisa
-    arrPesquisa: [],
+    arrPesquisa: Strorage.get("ArrPesquisa"),
 
     // função onde vai Amazenar os dados na array pesquisa
     // ela irar fazer o 'C' do CRUD
     createPesquisa: function(dadosPesquisa){
-        // Array para validar todos os campos da array pesquisa
-        const valores = ["cpf","pergunta1","pergunta2","pergunta3","pergunta4","pergunta5"]
-        for (let campo of valores){
-            if (!dadosPesquisa[campo]){
-                throw new RangeError(`Esta faltando Preencher esta valor:`+ campo);
-            }
-        }
+        // Adiciona os dados da pesquisa na array
         this.arrPesquisa.push(dadosPesquisa);
+        // Salva os dados atualizados no armazenamento local
+        Strorage.set("ArrPesquisa", this.arrPesquisa);
+
     },
     // Função que atualiza as informação da Pesquisa, aparti do indice
     // Ela irar fazer o 'U' do CRUD

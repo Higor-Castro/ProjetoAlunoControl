@@ -1,22 +1,21 @@
 import {AlunoModel} from "../model/AlunoModel.js";
 import viewAluno from  "../views/viewAluno.js";
 import { visualizarMensagem } from "../views/ViewMensagem.js";
+import CpfService from "../services/CpfServise.js";
 
 
 const formAdiciona = document.getElementById("formAluno");
 let msg = "";
 
 // Função validadora de CPF que retorna o index do CPF 
-function validarCpf(e) {
-    let validarCpf = Number(e.target.cpf.value);
-    let indexCpf = AlunoModel.readAluno().findIndex(aluno => aluno.cpf === validarCpf);
+function validarCpf(cpf) {
+    let indexCpf = CpfService.findCpf(cpf);
     // Verifica se o aluno existe
     if(indexCpf === -1){
         msg = `Aluno não encontrado!`;
         visualizarMensagem(msg);
     }
     return indexCpf;
-
 }
 
 // função para adicionar o Aluno em forma de OBJ na lista do AlunoModel
@@ -50,7 +49,8 @@ function adicionarAluno (e){
 function alterarAluno (e){
     e.preventDefault();
     // chamar a função que valida o cpf e retorna o index do cpf
-    let indexCpf = validarCpf(e);
+    let cpf = e.target.cpf.value;
+    let indexCpf = validarCpf(cpf);
 
     // chama a função para visualizar o formulário de atualização
     const viewUpdateAluno = viewAluno.visualizarAtualizacaoAluno;
@@ -63,6 +63,7 @@ function alterarAluno (e){
         e.preventDefault();
         let newAluno = {
             nome: e.target.nome.value,
+            cpf: Number(e.target.cpf.value),
             email: e.target.email.value,
             senha: e.target.senha.value,
             telefone: Number(e.target.telefone.value)
@@ -77,7 +78,8 @@ function alterarAluno (e){
 function deletarAluno (e){
     e.preventDefault();
     // chamar a função que valida o cpf e retorna o index do cpf
-    let indexCpf = validarCpf(e);
+    let cpf = e.target.cpf.value;
+    let indexCpf = validarCpf(cpf);
 
     msg = `Aluno ${AlunoModel.readAluno()[indexCpf].nome} deletado com sucesso!`;
     visualizarMensagem(msg);
@@ -89,7 +91,8 @@ function deletarAluno (e){
 function consultarAluno (e){
     e.preventDefault();
     // chamar a função que valida o cpf e retorna o index do cpf
-    let indexCpf = validarCpf(e);
+    let cpf = e.target.cpf.value;
+    let indexCpf = validarCpf(cpf);
 
     // mostra os dados do aluno encontrado
     const aluno = AlunoModel.readAluno()[indexCpf];
