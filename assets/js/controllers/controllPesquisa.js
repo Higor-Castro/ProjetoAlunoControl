@@ -24,16 +24,9 @@ function adicionarPesquisa (e){
         pergunta4: Number(e.target.suporte.value),
         pergunta5: Number(e.target.desempenho.value)
     };
-
-    // lista para validar os todos campos que vem do pesquisa
-    const valores = ["cpf","pergunta1", "pergunta2", "pergunta3", "pergunta4", "pergunta5"];
-    //Verrificar se estar faltando algum campo em forma de looping
-    for(let campo of valores){
-        if(!addPesquisa[campo]){
-            msg = `Esta faltando Preencher esta valor: ${campo}`;
-            view.visualizarMensagem(msg);
-            return; // Sai da função se algum campo estiver faltando
-        }
+    // Verifica se o CPF é válido
+    if(indexCpf === -1){
+        return;
     }
     // Se todos os campos estiverem preenchidos, adiciona a pesquisa
     PesquisaModel.createPesquisa(addPesquisa);

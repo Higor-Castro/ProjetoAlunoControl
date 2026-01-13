@@ -14,6 +14,7 @@ function validarCpf(cpf) {
     if(indexCpf === -1){
         msg = `Aluno não encontrado!`;
         visualizarMensagem(msg);
+        return -1;
     }
     return indexCpf;
 }

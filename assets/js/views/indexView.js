@@ -1,4 +1,4 @@
-import Controller from"../controllers/controllAluno.js";
+import ControllerAluno from"../controllers/controllAluno.js";
 
 const container = document.querySelector('.container');
 const main = document.querySelector('.main');
@@ -27,19 +27,19 @@ function mostrarBotao(botao) {
     // para o Aluno
     alterarCadastro: {
       titulo: "Alterar Cadastro",
-      acao: Controller.alterarAluno,
+      acao: ControllerAluno.alterarAluno,
       botao: "Consultar",
       css: "cadastro"
     },
     consultarCadastro: {
       titulo: "Consultar Cadastro",
-      acao: Controller.consultarAluno,
+      acao: ControllerAluno.consultarAluno,
       botao: "Buscar",
       css: "cadastro"
     },
     excluirCadastro: {
       titulo: "Excluir Cadastro",
-      acao: Controller.deletarAluno,
+      acao: ControllerAluno.deletarAluno,
       botao: "Excluir",
       css: "cadastro"
     },
@@ -48,7 +48,7 @@ function mostrarBotao(botao) {
     alterarPesquisa: {
       titulo: "Alterar Pesquisa",
       acao: "alterarPesquisa",
-      botao: "Alterar",
+      botao: "AlterarPesquisa",
       css: "pesquisa"
     },
     consultarPesquisa: {
