@@ -48,5 +48,3 @@ git clone https://github.com/Higor-Castro/ProjetoAlunoControl.git
 Basta abrir o arquivo **index.html** em qualquer navegador moderno.
 
 
-
-Se quiser acrescentar sessão de imagens, GIFs ou melhorias, posso adicionar!
