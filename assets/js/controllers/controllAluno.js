@@ -22,6 +22,15 @@ function validarCpf(cpf) {
 // função para adicionar o Aluno em forma de OBJ na lista do AlunoModel
 function adicionarAluno (e){
     e.preventDefault();
+    // validar o cpf para verificar se o aluno já existe
+    let cpf = e.target.cpf.value;
+    let indexCpf = validarCpf(cpf);
+    // Se o aluno já existir, exibe uma mensagem de erro    
+    if(indexCpf !== -1){
+        msg = `Aluno com CPF ${cpf} já existe!`;
+        visualizarMensagem(msg);
+        return;}
+    
     //OBJ para adicionar ao AlunoModel.createAluno.
     let addAluno = {
         nome: e.target.nome.value,

@@ -12,6 +12,10 @@ body {
     background: radial-gradient(circle at top, #2a2458, #1e192c);
     color: #fff;
     padding-top: 90px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* NAVBAR */

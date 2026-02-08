@@ -1,4 +1,5 @@
 import ControllerAluno from"../controllers/controllAluno.js";
+import ControllerPesquisa from "../controllers/controllPesquisa.js";
 
 const container = document.querySelector('.container');
 const main = document.querySelector('.main');
@@ -47,20 +48,19 @@ function mostrarBotao(botao) {
     //para a Pesquisa
     alterarPesquisa: {
       titulo: "Alterar Pesquisa",
-      acao: "alterarPesquisa",
+      acao: ControllerPesquisa.alterarPesquisa,
       botao: "AlterarPesquisa",
       css: "pesquisa"
     },
     consultarPesquisa: {
       titulo: "Consultar Pesquisa",
-      acao: "consultarPesquisa",
+      acao: ControllerPesquisa.consultarPesquisa,
       botao: "Buscar",
-
       css: "pesquisa"
     },
     excluirPesquisa: {
       titulo: "Excluir Pesquisa",
-      acao: "excluirPesquisa",
+      acao: ControllerPesquisa.excluirPesquisa,
       botao: "Excluir",
       css: "pesquisa"
     }
